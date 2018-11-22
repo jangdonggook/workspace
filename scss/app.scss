@@ -1,0 +1,26 @@
+$red:#FF0000;
+$rel:relative;
+$border_red:1px solid $red;
+$content_width:980px; 
+
+
+
+@mixin inc-obj($width){
+	position: $rel;
+	width: $width !important;
+	margin:0 auto;
+}
+
+@function calc-percent($num , $num2){
+	@return ($num / $num2) * 100%;
+}
+
+.inner {
+	@include inc-obj($content_width);	
+}
+.inner2{
+	@include inc-obj(1250px);
+}
+.inner3{
+	width:calc-percent(200px , 400px)
+}
